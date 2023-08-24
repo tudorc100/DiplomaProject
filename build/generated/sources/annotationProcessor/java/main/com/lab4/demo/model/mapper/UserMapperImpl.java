@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-29T19:07:16+0300",
+    date = "2023-08-22T22:41:35+0300",
     comments = "version: 1.4.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-6.8.3.jar, environment: Java 15.0.9 (Azul Systems, Inc.)"
 )
 @Component
@@ -30,6 +30,8 @@ public class UserMapperImpl implements UserMapper {
         userDTO.username( user.getUsername() );
         userDTO.id( user.getId() );
         userDTO.email( user.getEmail() );
+        userDTO.name( user.getName() );
+        userDTO.cnp( user.getCnp() );
         userDTO.password( user.getPassword() );
         Set<User> set = user.getFamilyMembers();
         if ( set != null ) {
@@ -49,6 +51,8 @@ public class UserMapperImpl implements UserMapper {
 
         user.username( userDto.getUsername() );
         user.id( userDto.getId() );
+        user.name( userDto.getName() );
+        user.cnp( userDto.getCnp() );
         user.email( userDto.getEmail() );
         user.password( userDto.getPassword() );
         List list = userDto.getFamilyMembers();

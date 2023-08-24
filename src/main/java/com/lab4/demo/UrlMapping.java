@@ -5,6 +5,9 @@ public class UrlMapping {
     public static final String ITEMS = API_PATH + "/items";
     public static final String ITEMS_ID_PART = "/{id}";
 
+    public static final String STATUS = API_PATH + "/status";
+    public static final String STATUS_ID_PART = "/{id}";
+
     public static final String AUTH = API_PATH + "/auth";
     public static final String SIGN_IN = "/sign-in";
     public static final String SIGN_UP = "/sign-up";
@@ -13,5 +16,8 @@ public class UrlMapping {
     public static final String USERS_ID_PART = "/{id}";
 
     public static final String TOUSERNAME = "/{toUsername}";
+
+
+
 
 }

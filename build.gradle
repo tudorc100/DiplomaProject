@@ -24,7 +24,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.22'
     implementation 'com.konghq:unirest-java:3.13.8'
     runtimeOnly 'com.h2database:h2'
-    runtimeOnly 'mysql:mysql-connector-java:8.0.28'
+    implementation 'mysql:mysql-connector-java:8.0.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.5'
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.8.0'

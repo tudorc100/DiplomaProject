@@ -37,6 +37,8 @@ public class AuthService {
                 .username(signUpRequest.getUsername())
                 .password(encoder.encode(signUpRequest.getPassword()))
                 .email(signUpRequest.getEmail())
+                .cnp(signUpRequest.getCnp())
+                .name(signUpRequest.getName())
                 .build();
 
         Set<String> rolesStr = signUpRequest.getRoles();

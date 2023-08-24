@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Builder
@@ -19,12 +20,16 @@ public class Entry {
     private Long id;
 
     @Column(length = 512, nullable = false)
+    private String title;
+    @Column(length = 512, nullable = false)
     private String description;
 
     @Column(length = 512, nullable = false)
     private String department;
 
-    @Column
+    @Column(length = 512, nullable = false)
+    private String entryDate;
+    @Column(length = 512, nullable = false)
     private Long userId;
 
 

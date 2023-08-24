@@ -1,7 +1,9 @@
 package com.lab4.demo;
 
 import com.lab4.demo.model.Entry;
+import com.lab4.demo.model.Status;
 import com.lab4.demo.repository.EntryRepository;
+import com.lab4.demo.repository.StatusRepository;
 import com.lab4.demo.service.EntryService;
 import com.lab4.demo.security.AuthService;
 import com.lab4.demo.security.dto.SignupRequest;
@@ -9,6 +11,7 @@ import com.lab4.demo.repository.RoleRepository;
 import com.lab4.demo.repository.UserRepository;
 import com.lab4.demo.model.ERole;
 import com.lab4.demo.model.Role;
+import com.lab4.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -30,7 +33,9 @@ public class Bootstrapper implements ApplicationListener<ApplicationReadyEvent> 
 
     private final EntryRepository entryRepository;
 
-    private final EntryService entryService;
+    private final StatusRepository statusRepository;
+
+    private final UserService userService;
 
 
     @Value("true")
@@ -46,6 +51,7 @@ public class Bootstrapper implements ApplicationListener<ApplicationReadyEvent> 
             entryRepository.deleteAll();
             userRepository.deleteAll();
             roleRepository.deleteAll();
+            statusRepository.deleteAll();
             for (ERole value : ERole.values()) {
                 roleRepository.save(
                         Role.builder()
@@ -61,16 +67,27 @@ public class Bootstrapper implements ApplicationListener<ApplicationReadyEvent> 
                     .build());
             authService.register(SignupRequest.builder()
                     .email("tudor1@gmail.com")
+                            .name("Tudor1")
                     .username("tudor1")
                     .password("WooHoo1!")
+                            .cnp("1")
                     .roles(Set.of("CUSTOMER"))
                     .build());
             authService.register(SignupRequest.builder()
                     .email("tudor11@gmail.com")
+                            .name("Tudor2")
+                            .cnp("2")
                     .username("tudor11")
                     .password("WooHoo1!")
                     .roles(Set.of("CUSTOMER"))
                     .build());
+            statusRepository.save(Status.builder().status("Test1")
+                            .timestamp("Day 1 hr 1")
+                            .userId(userRepository.findAll().get(2).getId())
+                    .build());
+            userService.addFamilyMember(userRepository.findUserByCnp("1").getId(),"2");
+
+
 //            entryRepository.deleteAll();
 //            entryRepository.save(Entry.builder().id(10L).description("Tilivizor")
 //                    .address("Marinescu")

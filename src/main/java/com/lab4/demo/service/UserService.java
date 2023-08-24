@@ -1,6 +1,5 @@
 package com.lab4.demo.service;
 
-import com.lab4.demo.model.Message;
 import com.lab4.demo.repository.RoleRepository;
 import com.lab4.demo.repository.UserRepository;
 import com.lab4.demo.security.AuthService;
@@ -10,7 +9,6 @@ import com.lab4.demo.model.mapper.UserMapper;
 import com.lab4.demo.model.ERole;
 import com.lab4.demo.model.Role;
 import com.lab4.demo.model.User;
-import com.lab4.demo.websocket.WebSocketService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +20,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+
 public class UserService {
 
     private final UserRepository userRepository;
@@ -30,7 +29,6 @@ public class UserService {
 
     private final RoleRepository roleRepository;
 
-    private final WebSocketService webSocketService;
 
     public List<UserDTO> findAll() {
         Optional<Role> defaultRole = roleRepository.findByName(ERole.CUSTOMER);
@@ -47,9 +45,11 @@ public class UserService {
 
         authService.register(SignupRequest.builder()
                 .email(userDTO.getEmail())
+                        .name(userDTO.getName())
+                        .cnp(userDTO.getCnp())
                 .username(userDTO.getUsername())
                 .password(userDTO.getPassword())
-                .roles(Set.of("CUSTOMER"))
+                .roles(Set.of("ADMIN"))
                 .build());
 
         return userDTO;
@@ -61,8 +61,9 @@ public class UserService {
     public UserDTO edit(Long id, UserDTO userDTO) {
         User actUser = findById(id);
         actUser.setUsername(userDTO.getUsername());
+        actUser.setName(userDTO.getName());
         actUser.setEmail(userDTO.getEmail());
-
+        actUser.setCnp(userDTO.getCnp());
         userRepository.save(actUser);
         return userMapper.toDto(actUser);
     }
@@ -75,9 +76,20 @@ public class UserService {
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new EntityNotFoundException("User not found" + username));
     }
-    public void sendMessage(String username, Message message) throws Exception {
-        User userToSendTo=findByUsername(username);
-        webSocketService.notification(message, userToSendTo.getId());
 
+    public void addFamilyMember(Long id1, String cnp)
+    {
+        User userToAddFamilyMember =findById(id1);
+        User familyMember=userRepository.findUserByCnp(cnp);
+        userToAddFamilyMember.getFamilyMembers().add(familyMember);
+        userRepository.save(userToAddFamilyMember);
     }
+
+    public List<UserDTO> findFamilyMembers(String username)
+    {
+        return userRepository.findUserByUsernameEquals(username).getFamilyMembers().stream()
+            .map(userMapper::toDto)
+            .collect(Collectors.toList());
+    }
+
 }

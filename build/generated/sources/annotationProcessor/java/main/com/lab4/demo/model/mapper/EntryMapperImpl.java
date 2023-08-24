@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-29T18:29:32+0300",
+    date = "2023-08-22T22:41:35+0300",
     comments = "version: 1.4.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-6.8.3.jar, environment: Java 15.0.9 (Azul Systems, Inc.)"
 )
 @Component
-public class DeviceMapperImpl implements DeviceMapper {
+public class EntryMapperImpl implements EntryMapper {
 
     @Override
     public EntryDTO toDto(Entry entry) {
@@ -24,8 +24,10 @@ public class DeviceMapperImpl implements DeviceMapper {
         EntryDTOBuilder entryDTO = EntryDTO.builder();
 
         entryDTO.id( entry.getId() );
+        entryDTO.title( entry.getTitle() );
         entryDTO.description( entry.getDescription() );
         entryDTO.department( entry.getDepartment() );
+        entryDTO.entryDate( entry.getEntryDate() );
         entryDTO.userId( entry.getUserId() );
 
         return entryDTO.build();
@@ -40,8 +42,10 @@ public class DeviceMapperImpl implements DeviceMapper {
         EntryBuilder entry = Entry.builder();
 
         entry.id( item.getId() );
+        entry.title( item.getTitle() );
         entry.description( item.getDescription() );
         entry.department( item.getDepartment() );
+        entry.entryDate( item.getEntryDate() );
         entry.userId( item.getUserId() );
 
         return entry.build();

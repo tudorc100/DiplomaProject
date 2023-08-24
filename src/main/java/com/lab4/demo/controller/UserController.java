@@ -13,6 +13,7 @@ import java.util.List;
 
 import static com.lab4.demo.UrlMapping.*;
 
+@CrossOrigin
 @RestController
 @RequestMapping(USER)
 @RequiredArgsConstructor
@@ -37,10 +38,14 @@ public class UserController {
     public UserDTO edit(@PathVariable Long id, @RequestBody UserDTO user) {
         return userService.edit(id, user);
     }
-    @CrossOrigin
-    @PostMapping(UrlMapping.TOUSERNAME)
-    @JsonRawValue
-    public void sendMessage(@PathVariable String toUsername, @RequestBody Message message) throws Exception {
-        userService.sendMessage(toUsername, message);
+
+    @PostMapping("/{id}/add-family-member")
+    public void addFamilyMember(@PathVariable Long id, @RequestParam String cnp) {
+        userService.addFamilyMember(id, cnp);
+    }
+
+    @GetMapping("/family/{username}")
+    public List<UserDTO> findFamilyMembers(@PathVariable String username) {
+        return userService.findFamilyMembers(username);
     }
 }

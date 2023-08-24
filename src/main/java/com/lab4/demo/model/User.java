@@ -21,6 +21,7 @@ import java.util.Set;
 @Data
 @Getter
 @Setter
+@EqualsAndHashCode(exclude = "familyMembers")
 public class User {
 
     @Id
@@ -30,6 +31,10 @@ public class User {
     @Column(nullable = false, length = 20)
     private String username;
 
+    @Column
+    private String name;
+    @Column
+    private String cnp;
     @Email
     @Column(nullable = false, length = 50)
     private String email;
@@ -37,7 +42,7 @@ public class User {
     @Column(nullable = false, length = 120)
     private String password;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH},fetch = FetchType.EAGER)
     @JoinTable(
             name = "family_members",
             joinColumns = @JoinColumn(name = "user_id"),
