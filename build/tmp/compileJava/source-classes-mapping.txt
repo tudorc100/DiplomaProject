@@ -1,97 +1,97 @@
-com/lab4/demo/model/User.java
- com.lab4.demo.model.User
- com.lab4.demo.model.User$UserBuilder
-com/lab4/demo/model/UserDetailsServiceImpl.java
- com.lab4.demo.model.UserDetailsServiceImpl
-com/lab4/demo/dtos/StatusDTO.java
- com.lab4.demo.dtos.StatusDTO
-com/lab4/demo/model/Status.java
- com.lab4.demo.model.Status
- com.lab4.demo.model.Status$StatusBuilder
-com/lab4/demo/controller/UserController.java
- com.lab4.demo.controller.UserController
-com/lab4/demo/security/AuthService.java
- com.lab4.demo.security.AuthService
-com/lab4/demo/repository/RoleRepository.java
- com.lab4.demo.repository.RoleRepository
-com/lab4/demo/security/WebSecurityConfig.java
- com.lab4.demo.security.WebSecurityConfig
- com.lab4.demo.security.WebSecurityConfig$1
-com/lab4/demo/model/ERole.java
- com.lab4.demo.model.ERole
-com/lab4/demo/UrlMapping.java
- com.lab4.demo.UrlMapping
-com/lab4/demo/security/dto/MessageResponse.java
- com.lab4.demo.security.dto.MessageResponse
- com.lab4.demo.security.dto.MessageResponse$MessageResponseBuilder
-com/lab4/demo/Bootstrapper.java
- com.lab4.demo.Bootstrapper
-com/lab4/demo/dtos/EntryDTO.java
- com.lab4.demo.dtos.EntryDTO
- com.lab4.demo.dtos.EntryDTO$EntryDTOBuilder
-com/lab4/demo/controller/EntryController.java
- com.lab4.demo.controller.EntryController
-com/lab4/demo/DemoApplication.java
- com.lab4.demo.DemoApplication
-com/lab4/demo/security/dto/JwtResponse.java
- com.lab4.demo.security.dto.JwtResponse
- com.lab4.demo.security.dto.JwtResponse$JwtResponseBuilder
-com/lab4/demo/model/mapper/UserMapper.java
- com.lab4.demo.model.mapper.UserMapper
-com/lab4/demo/model/Role.java
- com.lab4.demo.model.Role
- com.lab4.demo.model.Role$RoleBuilder
-com/lab4/demo/security/AuthTokenFilter.java
- com.lab4.demo.security.AuthTokenFilter
-com/lab4/demo/service/UserService.java
- com.lab4.demo.service.UserService
-com/lab4/demo/model/Entry.java
- com.lab4.demo.model.Entry
- com.lab4.demo.model.Entry$EntryBuilder
-com/lab4/demo/security/AuthEntryPointJwt.java
- com.lab4.demo.security.AuthEntryPointJwt
-com/lab4/demo/repository/StatusRepository.java
- com.lab4.demo.repository.StatusRepository
-com/lab4/demo/dtos/UserDTO.java
- com.lab4.demo.dtos.UserDTO
- com.lab4.demo.dtos.UserDTO$UserDTOBuilder
-com/lab4/demo/security/AuthController.java
- com.lab4.demo.security.AuthController
-com/lab4/demo/dtos/UserDetailsImpl.java
- com.lab4.demo.dtos.UserDetailsImpl
-com/lab4/demo/security/JwtUtils.java
- com.lab4.demo.security.JwtUtils
-com/lab4/demo/repository/EntryRepository.java
- com.lab4.demo.repository.EntryRepository
-com/lab4/demo/websocket/WebSocketService.java
- com.lab4.demo.websocket.WebSocketService
-com/lab4/demo/model/Message.java
- com.lab4.demo.model.Message
- com.lab4.demo.model.Message$MessageBuilder
-com/lab4/demo/model/mapper/EntryMapper.java
- com.lab4.demo.model.mapper.EntryMapper
-com/lab4/demo/security/dto/LoginRequest.java
- com.lab4.demo.security.dto.LoginRequest
-com/lab4/demo/model/mapper/StatusMapper.java
- com.lab4.demo.model.mapper.StatusMapper
-com/lab4/demo/repository/UserRepository.java
- com.lab4.demo.repository.UserRepository
-com/lab4/demo/service/StatusService.java
- com.lab4.demo.service.StatusService
-com/lab4/demo/controller/StatusController.java
- com.lab4.demo.controller.StatusController
-com/lab4/demo/security/dto/SignupRequest.java
- com.lab4.demo.security.dto.SignupRequest
- com.lab4.demo.security.dto.SignupRequest$SignupRequestBuilder
-com/lab4/demo/service/EntryService.java
- com.lab4.demo.service.EntryService
-com/lab4/demo/websocket/WebSocketSender.java
- com.lab4.demo.websocket.WebSocketSender
-com/lab4/demo/repository/ChatRepository.java
- com.lab4.demo.repository.ChatRepository
-com/lab4/demo/websocket/WebSocketConfig.java
- com.lab4.demo.websocket.WebSocketConfig
-com/lab4/demo/model/Chat.java
- com.lab4.demo.model.Chat
-com/lab4/demo/controller/ChatController.java
- com.lab4.demo.controller.ChatController
+com/medical/demo/DemoApplication.java
+ com.medical.demo.DemoApplication
+com/medical/demo/model/ERole.java
+ com.medical.demo.model.ERole
+com/medical/demo/security/AuthTokenFilter.java
+ com.medical.demo.security.AuthTokenFilter
+com/medical/demo/model/Entry.java
+ com.medical.demo.model.Entry
+ com.medical.demo.model.Entry$EntryBuilder
+com/medical/demo/controller/ChatController.java
+ com.medical.demo.controller.ChatController
+com/medical/demo/security/dto/JwtResponse.java
+ com.medical.demo.security.dto.JwtResponse
+ com.medical.demo.security.dto.JwtResponse$JwtResponseBuilder
+com/medical/demo/security/WebSecurityConfig.java
+ com.medical.demo.security.WebSecurityConfig
+ com.medical.demo.security.WebSecurityConfig$1
+com/medical/demo/repository/ChatRepository.java
+ com.medical.demo.repository.ChatRepository
+com/medical/demo/model/mapper/StatusMapper.java
+ com.medical.demo.model.mapper.StatusMapper
+com/medical/demo/service/StatusService.java
+ com.medical.demo.service.StatusService
+com/medical/demo/dtos/EntryDTO.java
+ com.medical.demo.dtos.EntryDTO
+ com.medical.demo.dtos.EntryDTO$EntryDTOBuilder
+com/medical/demo/security/dto/LoginRequest.java
+ com.medical.demo.security.dto.LoginRequest
+com/medical/demo/security/AuthEntryPointJwt.java
+ com.medical.demo.security.AuthEntryPointJwt
+com/medical/demo/security/dto/SignupRequest.java
+ com.medical.demo.security.dto.SignupRequest
+ com.medical.demo.security.dto.SignupRequest$SignupRequestBuilder
+com/medical/demo/security/AuthController.java
+ com.medical.demo.security.AuthController
+com/medical/demo/dtos/UserDTO.java
+ com.medical.demo.dtos.UserDTO
+ com.medical.demo.dtos.UserDTO$UserDTOBuilder
+com/medical/demo/repository/StatusRepository.java
+ com.medical.demo.repository.StatusRepository
+com/medical/demo/repository/RoleRepository.java
+ com.medical.demo.repository.RoleRepository
+com/medical/demo/security/AuthService.java
+ com.medical.demo.security.AuthService
+com/medical/demo/model/mapper/EntryMapper.java
+ com.medical.demo.model.mapper.EntryMapper
+com/medical/demo/UrlMapping.java
+ com.medical.demo.UrlMapping
+com/medical/demo/model/Role.java
+ com.medical.demo.model.Role
+ com.medical.demo.model.Role$RoleBuilder
+com/medical/demo/model/User.java
+ com.medical.demo.model.User
+ com.medical.demo.model.User$UserBuilder
+com/medical/demo/security/dto/MessageResponse.java
+ com.medical.demo.security.dto.MessageResponse
+ com.medical.demo.security.dto.MessageResponse$MessageResponseBuilder
+com/medical/demo/model/Message.java
+ com.medical.demo.model.Message
+ com.medical.demo.model.Message$MessageBuilder
+com/medical/demo/model/Chat.java
+ com.medical.demo.model.Chat
+com/medical/demo/controller/StatusController.java
+ com.medical.demo.controller.StatusController
+com/medical/demo/repository/EntryRepository.java
+ com.medical.demo.repository.EntryRepository
+com/medical/demo/model/UserDetailsServiceImpl.java
+ com.medical.demo.model.UserDetailsServiceImpl
+com/medical/demo/dtos/StatusDTO.java
+ com.medical.demo.dtos.StatusDTO
+com/medical/demo/security/JwtUtils.java
+ com.medical.demo.security.JwtUtils
+com/medical/demo/websocket/WebSocketConfig.java
+ com.medical.demo.websocket.WebSocketConfig
+com/medical/demo/model/Status.java
+ com.medical.demo.model.Status
+ com.medical.demo.model.Status$StatusBuilder
+com/medical/demo/repository/UserRepository.java
+ com.medical.demo.repository.UserRepository
+com/medical/demo/model/mapper/UserMapper.java
+ com.medical.demo.model.mapper.UserMapper
+com/medical/demo/dtos/UserDetailsImpl.java
+ com.medical.demo.dtos.UserDetailsImpl
+com/medical/demo/controller/MailController.java
+ com.medical.demo.controller.MailController
+com/medical/demo/controller/UserController.java
+ com.medical.demo.controller.UserController
+com/medical/demo/service/UserService.java
+ com.medical.demo.service.UserService
+com/medical/demo/controller/EntryController.java
+ com.medical.demo.controller.EntryController
+com/medical/demo/service/EntryService.java
+ com.medical.demo.service.EntryService
+com/medical/demo/service/EmailService.java
+ com.medical.demo.service.EmailService
+com/medical/demo/Bootstrapper.java
+ com.medical.demo.Bootstrapper
